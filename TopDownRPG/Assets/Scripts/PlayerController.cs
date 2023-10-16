@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -21,20 +22,40 @@ public class PlayerController : MonoBehaviour
     {
         if (_movementInput != Vector2.zero)
         {
-            int _count = _rb.Cast(
-                _movementInput,
-                movementFilter,
-                castCollisions,
-                moveSpeed * Time.fixedDeltaTime + collisionOfset);
-            if (_count == 0)
+            bool success = TryMove(_movementInput);
+
+            if (!success)
             {
-                _rb.MovePosition(_rb.position + _movementInput * moveSpeed * Time.fixedDeltaTime);
+                success = TryMove(new Vector2(_movementInput.x, 0));
+
+                if (!success)
+                {
+                    TryMove(new Vector2(0, _movementInput.y));
+                }
             }
-            
         }
     }
 
-    void OnMove(InputValue movementValue)
+
+    private bool TryMove(Vector2 direction)
+    {
+        var count = _rb.Cast(
+            direction,
+            movementFilter,
+            castCollisions,
+            moveSpeed * Time.fixedDeltaTime + collisionOfset);
+        if (count == 0)
+        {
+            _rb.MovePosition(_rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void OnMove(InputValue movementValue)
     {
         _movementInput = movementValue.Get<Vector2>();
     }
