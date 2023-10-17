@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33911cc3-b34f-4331-8a44-9e429e838008" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownRPG/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownRPG/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownRPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +81,7 @@
       <updated>1697412374483</updated>
       <workItem from="1697412395042" duration="2743000" />
       <workItem from="1697465767784" duration="2890000" />
-      <workItem from="1697473023336" duration="1425000" />
+      <workItem from="1697473023336" duration="1683000" />
     </task>
     <servers />
   </component>
@@ -120,10 +119,10 @@
           <line>28</line>
           <properties documentPath="C:\GitProjects\TopDownRPG\TopDownRPG\Assets\Scripts\PlayerController.cs" initialLine="28">
             <startOffsets>
-              <option value="665" />
+              <option value="688" />
             </startOffsets>
             <endOffsets>
-              <option value="717" />
+              <option value="740" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />

@@ -27,11 +27,10 @@ public class PlayerController : MonoBehaviour
             if (!success)
             {
                 success = TryMove(new Vector2(_movementInput.x, 0));
-
-                if (!success)
-                {
-                    TryMove(new Vector2(0, _movementInput.y));
-                }
+            }
+            if (!success)
+            {
+                TryMove(new Vector2(0, _movementInput.y));
             }
         }
     }
@@ -39,15 +38,22 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 direction)
     {
-        var count = _rb.Cast(
-            direction,
-            movementFilter,
-            castCollisions,
-            moveSpeed * Time.fixedDeltaTime + collisionOfset);
-        if (count == 0)
+        if (direction != Vector2.zero)
         {
-            _rb.MovePosition(_rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-            return true;
+            int count = _rb.Cast(
+                direction,
+                movementFilter,
+                castCollisions,
+                moveSpeed * Time.fixedDeltaTime + collisionOfset);
+            if (count == 0)
+            {
+                _rb.MovePosition(_rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
