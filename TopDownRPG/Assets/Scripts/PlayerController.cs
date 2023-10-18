@@ -10,12 +10,16 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movementFilter;
     private Vector2 _movementInput;
     private Rigidbody2D _rb;
+    private Animator _anim;
+    private SpriteRenderer _spriteRenderer;
     
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -32,6 +36,16 @@ public class PlayerController : MonoBehaviour
             {
                 TryMove(new Vector2(0, _movementInput.y));
             }
+            _anim.SetBool("isMovingDown", success && (_movementInput.x == 0 && _movementInput.y < 0));
+            _anim.SetBool("isMovingUp", success &&(_movementInput.x == 0 && _movementInput.y > 0));
+            _anim.SetBool("isMovingLeft", success && _movementInput.x != 0);
+            _spriteRenderer.flipX = _movementInput.x < 0;
+        }
+        else
+        {
+            _anim.SetBool("isMovingLeft",false);
+            _anim.SetBool("isMovingDown", false);
+            _anim.SetBool("isMovingUp", false);
         }
     }
 
