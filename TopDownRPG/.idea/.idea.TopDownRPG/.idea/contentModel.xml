@@ -21,9 +21,11 @@
           <e p="Player" t="Include">
             <e p="Animations" t="Include" />
           </e>
+          <e p="Slame" t="Include" />
         </e>
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Enimy.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
         </e>
       </e>

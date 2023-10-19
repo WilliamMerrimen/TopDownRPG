@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private bool _canMove = true;
     private short _status = -1;
+    public int damage = 2;
 
     [FormerlySerializedAs("SwordAtackDown")] public GameObject swordAtackDown;
     [FormerlySerializedAs("SwordAtackUp")] public GameObject swordAtackUp;
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
         _clSwordUp = swordAtackUp.GetComponent<Collider2D>();
         _clSwordLeft = swordAtackLeft.GetComponent<Collider2D>();
 
-        _swordAtackLeftPositionX = swordAtackLeft.transform.position.x;
+        _swordAtackLeftPositionX = swordAtackLeft.transform.localPosition.x;
 
         _clSwordDown.enabled = false;
         _clSwordUp.enabled = false;
@@ -146,12 +147,12 @@ public class PlayerController : MonoBehaviour
         {
             if (_spriteRenderer.flipX)
             {
-                swordAtackLeft.transform.position = new Vector2(_swordAtackLeftPositionX * -1, swordAtackLeft.transform.position.y);
+                swordAtackLeft.transform.localPosition = new Vector2(_swordAtackLeftPositionX * -1, swordAtackLeft.transform.localPosition.y);
                 Debug.Log("Atack Right");
             }
             else
             {
-                swordAtackLeft.transform.position = new Vector2(_swordAtackLeftPositionX, swordAtackLeft.transform.position.y);
+                swordAtackLeft.transform.localPosition = new Vector2(_swordAtackLeftPositionX, swordAtackLeft.transform.localPosition.y);
                 Debug.Log("Atack Left");
             }
 

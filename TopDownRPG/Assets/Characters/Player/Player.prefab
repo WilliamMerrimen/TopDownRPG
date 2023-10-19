@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8391806947322835145}
   m_Layer: 0
   m_Name: SwordAtackUP
-  m_TagString: Untagged
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4929069699786432651}
   m_Layer: 0
   m_Name: SwordAtackDown
-  m_TagString: Untagged
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 6690610913724085001}
   m_Layer: 0
   m_Name: SwordAtackLeft
-  m_TagString: Untagged
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4593593194425215763}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +381,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  damage: 2
   swordAtackDown: {fileID: 4247123847888397066}
   swordAtackUp: {fileID: 1639735129601381008}
   swordAtackLeft: {fileID: 7814987658658269951}
