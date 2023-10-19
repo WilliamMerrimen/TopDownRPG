@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33911cc3-b34f-4331-8a44-9e429e838008" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownRPG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownRPG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,8 @@
       <updated>1697412374483</updated>
       <workItem from="1697412395042" duration="2743000" />
       <workItem from="1697465767784" duration="2890000" />
-      <workItem from="1697473023336" duration="11729000" />
+      <workItem from="1697473023336" duration="12025000" />
+      <workItem from="1697709883209" duration="3431000" />
     </task>
     <servers />
   </component>
