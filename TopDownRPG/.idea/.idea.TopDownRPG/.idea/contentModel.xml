@@ -21,7 +21,9 @@
           <e p="Player" t="Include">
             <e p="Animations" t="Include" />
           </e>
-          <e p="Slame" t="Include" />
+          <e p="Slame" t="Include">
+            <e p="Animations" t="Include" />
+          </e>
         </e>
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
