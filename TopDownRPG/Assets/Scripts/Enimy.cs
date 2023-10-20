@@ -1,15 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Enimy : MonoBehaviour
 {
     public int health = 5;
-    private PlayerController player;
+    private PlayerController _player;
+    private Animator _anim;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        _anim = GetComponent<Animator>();
     }
 
     public int Health
@@ -18,7 +18,7 @@ public class Enimy : MonoBehaviour
         {
             health = value;
             if(health <= 0)
-                Destroy(gameObject);
+                _anim.SetTrigger("slimeDead");
         }
         get
         {
@@ -30,7 +30,13 @@ public class Enimy : MonoBehaviour
     {
         if (other.CompareTag("sword"))
         {
-            Health -= player.damage;
+            Health -= _player.damage;
+            _anim.SetTrigger("slimeDamage");
         }
+    }
+
+    void RemoveObject()
+    {
+        Destroy(gameObject);
     }
 }
